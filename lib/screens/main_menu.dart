@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:match_game/models/data_value.dart';
 import 'package:match_game/models/stage_option.dart';
@@ -9,8 +7,7 @@ import 'package:match_game/screens/relax_stage.dart';
 import 'package:match_game/screens/settings_pane.dart';
 import 'package:match_game/screens/timed_stage.dart';
 import 'package:match_game/widgets/backdrop_dialog.dart';
-import 'package:match_game/widgets/life_bar.dart';
-import 'package:match_game/widgets/timer_bar.dart';
+import 'package:match_game/widgets/menu_tile.dart';
 
 class MainMenuScreen extends StatefulWidget {
   @override
@@ -20,27 +17,51 @@ class MainMenuScreen extends StatefulWidget {
 class _MainMenuScreenState extends State<MainMenuScreen> {
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      body: Center(
+      body: SafeArea(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            RaisedButton(
-              onPressed: _startTimed,
-              child: Text('Start timed stage'),
+            Center(
+              child: Text('Match game', style: textTheme.headline5),
             ),
-            RaisedButton(
-              onPressed: _startFocus,
-              child: Text('Start focus stage'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                MenuTile(
+                  label: 'Timed',
+                  icon: Icons.timer,
+                  color: Colors.blue,
+                  onTap: _startTimed,
+                ),
+                MenuTile(
+                  label: 'Focus',
+                  icon: Icons.opacity,
+                  color: Colors.red,
+                  onTap: _startFocus,
+                ),
+              ],
             ),
-            RaisedButton(
-              onPressed: _startRelax,
-              child: Text('Start relax stage'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                MenuTile(
+                  label: 'Relax',
+                  icon: Icons.accessibility,
+                  color: Colors.lightGreen,
+                  onTap: _startRelax,
+                ),
+                MenuTile(
+                  label: 'Options',
+                  icon: Icons.settings,
+                  color: Colors.blueGrey,
+                  onTap: _options,
+                ),
+              ],
             ),
-            RaisedButton(
-              onPressed: _options,
-              child: Text('Options'),
-            ),
+            Center(child: Text('© 2020', style: textTheme.caption)),
           ],
         ),
       ),

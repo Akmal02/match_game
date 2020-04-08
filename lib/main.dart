@@ -10,9 +10,11 @@ import 'models/data_value.dart';
 final Random random = Random();
 final Stopwatch stopwatch = Stopwatch();
 
-void runAsync(Function function) => Future.delayed(Duration(milliseconds: 50), function);
+void runAsync(Function function) =>
+    Future.delayed(Duration(milliseconds: 50), function);
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Settings.load();
   runApp(MyApp());
 }
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         }),
       ),
       themedWidgetBuilder: (context, theme) => MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Match Game',
         theme: theme,
         darkTheme: null,
         home: MainMenuScreen(),
