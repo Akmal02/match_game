@@ -1,16 +1,17 @@
-# match_game
+# Match game
 
-A new Flutter project.
+A simple tile match game powered by Flutter.
 
-## Getting Started
+![1](screenshots/1.jpg)
 
-This project is a starting point for a Flutter application.
+![2](screenshots/2.jpg)
 
-A few resources to get you started if this is your first Flutter project:
+![3](screenshots/3.jpg)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+![4](screenshots/4.jpg)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![5](screenshots/5.jpg)
+
+---
+
+More to be added later.
